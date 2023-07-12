@@ -2,14 +2,16 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FeedbackModalComponent } from './feedback-modal/feedback-modal.component';
 
-interface Feedback {
+export interface Feedback {
   shortId: string;
   emoji: Emoji;
   feedback: string;
 }
 
-interface Emoji {
+export interface Emoji {
   emojiCode: string;
   description: string;
 }
@@ -42,15 +44,13 @@ export class AppComponent {
     },
   ];
 
-  showModal = false;
   modalTitle = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private modalService: NgbModal) {}
 
   openModal(emoji: Emoji) {
     this.selectedEmoji = emoji;
     this.modalTitle = this.shortIdCtrl.value || '';
-    this.showModal = true;
 
     const feedback: Feedback = {
       emoji,
@@ -60,25 +60,25 @@ export class AppComponent {
 
     console.log(feedback);
 
+    const modalRef = this.modalService.open(FeedbackModalComponent);
+    modalRef.componentInstance.feedback = feedback;
+
     this.http
       .post<any>('http://localhost:3000/save-feedback', { feedback })
       .subscribe(
         (response) => {
           console.log(response);
+          this.resetControls();
         },
         (error) => {
           console.error(error);
+          this.resetControls();
         }
       );
-
-    setTimeout(() => {
-      this.closeModal();
-      this.feedbackCtrl.reset();
-      this.shortIdCtrl.reset();
-    }, 1000);
   }
 
-  closeModal(): void {
-    this.showModal = false;
+  resetControls() {
+    this.feedbackCtrl.reset();
+    this.shortIdCtrl.reset();
   }
 }

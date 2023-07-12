@@ -1,13 +1,12 @@
 <div class="feedback-header m-5 d-flex justify-content-center">
   <h1>Feedback</h1>
 </div>
-
-<div class="mb-3 d-flex flex-column align-items-center">
-  <!-- <label for="userIdInput" class="form-label">User Id or Name</label> -->
-  <input type="text" [formControl]="shortIdCtrl" style="width: 50%;" class="form-control mb-3"
-    placeholder="userid or name">
-  <textarea type="text" [formControl]="feedbackCtrl" style="width: 50%;" class="form-control" rows="3"
-    placeholder="feedback"></textarea>
+<div class="container-sm text-center">
+  <div class="mb-3">
+    <!-- <label for="userIdInput" class="form-label">User Id or Name</label> -->
+    <input type="text" [formControl]="shortIdCtrl" class="form-control mb-3" placeholder="userid or name">
+    <textarea type="text" [formControl]="feedbackCtrl" class="form-control" rows="3" placeholder="feedback"></textarea>
+  </div>
 </div>
 
 
@@ -15,33 +14,5 @@
   <div class="feedback-emoji m-5 d-flex flex-column align-items-center" *ngFor="let emoji of emojis">
     <div class="emoji" [innerHTML]="emoji.emojiCode" (click)="openModal(emoji)"></div>
     <div class="emoji-description">{{emoji.description}}</div>
-  </div>
-</div>
-
-
-<div *ngIf="showModal" class="modal fade show" style="display: block;">
-  <!-- <div class="model-dialog">
-    <div class="modal-content">
-      <span class="close" (click)="closeModal()">&times;</span>
-      <h2>{{ modalTitle }}</h2>
-      <div class="emoji-modal">{{ selectedEmoji.emojiCode }}</div>
-    </div>
-  </div> -->
-
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLiveLabel">Thanks for your feedback</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-          (click)="closeModal()"></button>
-      </div>
-      <div class="modal-body">
-        <p>Woo-hoo, you're reading this text in a modal!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
-    </div>
   </div>
 </div>
