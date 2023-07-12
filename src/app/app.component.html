@@ -11,8 +11,9 @@
 
 
 <div class="emojis d-flex justify-content-center">
-  <div class="feedback-emoji m-5 d-flex flex-column align-items-center" *ngFor="let emoji of emojis">
+  <div class="feedback-emoji m-5 d-flex flex-column align-items-center" *ngFor="let emoji of emojis; let i = index">
     <div class="emoji" [innerHTML]="emoji.emojiCode" (click)="openModal(emoji)"></div>
     <div class="emoji-description">{{emoji.description}}</div>
+    <div class="index">Press {{i+1}}</div>
   </div>
 </div>

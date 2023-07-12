@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
@@ -47,6 +47,30 @@ export class AppComponent {
   modalTitle = '';
 
   constructor(private http: HttpClient, private modalService: NgbModal) {}
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    const keyCode = event.keyCode || event.which;
+    const key = String.fromCharCode(keyCode);
+
+    // Check if the pressed key is a number (0-9)
+    if (/^[0-9]$/.test(key) || /^Numpad[0-9]$/.test(event.code)) {
+      let emojiIndex: number;
+
+      // Check if the pressed key is from the number pad
+      if (/^Numpad[0-9]$/.test(event.code)) {
+        emojiIndex = parseInt(event.code.slice(-1), 10) - 1;
+      } else {
+        emojiIndex = parseInt(key, 10) - 1;
+      }
+
+      // Check if the emoji index is valid
+      if (emojiIndex >= 0 && emojiIndex < this.emojis.length) {
+        const emoji = this.emojis[emojiIndex];
+        this.openModal(emoji);
+      }
+    }
+  }
 
   openModal(emoji: Emoji) {
     this.selectedEmoji = emoji;
