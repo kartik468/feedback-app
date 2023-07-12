@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Emoji List</title>
+  <style>
+    .emoji {
+      font-size: 80px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Emoji List</h1>
+  <div id="emojiList"></div>
+
+  <script>
+    var emojis = [
+      {
+        "emojiCode": "&#128512;",
+        "description": "Grinning Face"
+      },
+      {
+        "emojiCode": "&#128513;",
+        "description": "Grinning Face with Smiling Eyes"
+      },
+      {
+        "emojiCode": "&#128514;",
+        "description": "Face with Tears of Joy"
+      },
+      // Add more emojis and descriptions here
+    ];
+
+    var emojis = [
+      {
+        "emojiCode": "&#128512;",
+        "description": "Grinning Face"
+      },
+      {
+        "emojiCode": "&#128513;",
+        "description": "Grinning Face with Smiling Eyes"
+      },
+      {
+        "emojiCode": "&#128514;",
+        "description": "Face with Tears of Joy"
+      },
+      {
+        "emojiCode": "&#128515;",
+        "description": "Smiling Face with Open Mouth"
+      },
+      {
+        "emojiCode": "&#128516;",
+        "description": "Smiling Face with Smiling Eyes"
+      },
+      {
+        "emojiCode": "&#128517;",
+        "description": "Smiling Face with Open Mouth and Cold Sweat"
+      },
+      {
+        "emojiCode": "&#128518;",
+        "description": "Smiling Face with Open Mouth and Tightly-Closed Eyes"
+      },
+      {
+        "emojiCode": "&#128519;",
+        "description": "Smiling Face with Halo"
+      },
+      {
+        "emojiCode": "&#128520;",
+        "description": "Smiling Face with Horns"
+      },
+      {
+        "emojiCode": "&#128521;",
+        "description": "Winking Face"
+      },
+      {
+        "emojiCode": "&#128522;",
+        "description": "Smiling Face with Smiling Eyes and Smiling Mouth"
+      },
+      {
+        "emojiCode": "&#128523;",
+        "description": "Face Savouring Delicious Food"
+      },
+      {
+        "emojiCode": "&#128524;",
+        "description": "Relieved Face"
+      },
+      {
+        "emojiCode": "&#128525;",
+        "description": "Smiling Face with Heart-Eyes"
+      },
+      {
+        "emojiCode": "&#128526;",
+        "description": "Smiling Face with Sunglasses"
+      },
+      {
+        "emojiCode": "&#128527;",
+        "description": "Smirking Face"
+      },
+      {
+        "emojiCode": "&#128528;",
+        "description": "Neutral Face"
+      },
+      {
+        "emojiCode": "&#128529;",
+        "description": "Expressionless Face"
+      },
+      {
+        "emojiCode": "&#128530;",
+        "description": "Unamused Face"
+      },
+      {
+        "emojiCode": "&#128531;",
+        "description": "Face with Cold Sweat"
+      },
+      {
+        "emojiCode": "&#128532;",
+        "description": "Pensive Face"
+      },
+      {
+        "emojiCode": "&#128533;",
+        "description": "Confused Face"
+      },
+      {
+        "emojiCode": "&#128534;",
+        "description": "Confounded Face"
+      },
+      {
+        "emojiCode": "&#128535;",
+        "description": "Kissing Face"
+      },
+      {
+        "emojiCode": "&#128536;",
+        "description": "Face Blowing a Kiss"
+      },
+      {
+        "emojiCode": "&#128537;",
+        "description": "Kissing Face with Smiling Eyes"
+      },
+      {
+        "emojiCode": "&#128538;",
+        "description": "Kissing Face with Closed Eyes"
+      },
+      {
+        "emojiCode": "&#128539;",
+        "description": "Face with Tongue"
+      },
+      {
+        "emojiCode": "&#128540;",
+        "description": "Winking Face with Tongue"
+      },
+      {
+        "emojiCode": "&#128541;",
+        "description": "Squinting Face with Tongue"
+      },
+      {
+        "emojiCode": "&#128542;",
+        "description": "Disappointed Face"
+      },
+      {
+        "emojiCode": "&#128543;",
+        "description": "Worried Face"
+      },
+      {
+        "emojiCode": "&#128544;",
+        "description": "Angry Face"
+      },
+      {
+        "emojiCode": "&#128545;",
+        "description": "Pouting Face"
+      },
+      {
+        "emojiCode": "&#128546;",
+        "description": "Crying Face"
+      },
+      {
+        "emojiCode": "&#128547;",
+        "description": "Persevering Face"
+      },
+      {
+        "emojiCode": "&#128548;",
+        "description": "Face with Steam From Nose"
+      },
+      {
+        "emojiCode": "&#128549;",
+        "description": "Sad but Relieved Face"
+      },
+      {
+        "emojiCode": "&#128550;",
+        "description": "Frowning Face with Open Mouth"
+      },
+      {
+        "emojiCode": "&#128551;",
+        "description": "Anguished Face"
+      },
+      {
+        "emojiCode": "&#128552;",
+        "description": "Fearful Face"
+      },
+      {
+        "emojiCode": "&#128553;",
+        "description": "Weary Face"
+      },
+      {
+        "emojiCode": "&#128554;",
+        "description": "Sleepy Face"
+      },
+      {
+        "emojiCode": "&#128555;",
+        "description": "Tired Face"
+      },
+      {
+        "emojiCode": "&#128556;",
+        "description": "Grimacing Face"
+      },
+      {
+        "emojiCode": "&#128557;",
+        "description": "Loudly Crying Face"
+      },
+      {
+        "emojiCode": "&#128558;",
+        "description": "Face with Open Mouth"
+      },
+      {
+        "emojiCode": "&#128559;",
+        "description": "Hushed Face"
+      },
+      {
+        "emojiCode": "&#128560;",
+        "description": "Anxious Face with Sweat"
+      },
+      {
+        "emojiCode": "&#128561;",
+        "description": "Face Screaming in Fear"
+      },
+      {
+        "emojiCode": "&#128562;",
+        "description": "Astonished Face"
+      },
+      {
+        "emojiCode": "&#128563;",
+        "description": "Flushed Face"
+      },
+      {
+        "emojiCode": "&#128564;",
+        "description": "Sleeping Face"
+      },
+      {
+        "emojiCode": "&#128565;",
+        "description": "Dizzy Face"
+      },
+      {
+        "emojiCode": "&#128566;",
+        "description": "Face Without Mouth"
+      },
+      {
+        "emojiCode": "&#128567;",
+        "description": "Face with Medical Mask"
+      },
+      {
+        "emojiCode": "&#128568;",
+        "description": "Grinning Cat Face with Smiling Eyes"
+      },
+      {
+        "emojiCode": "&#128569;",
+        "description": "Cat Face with Tears of Joy"
+      },
+      {
+        "emojiCode": "&#128570;",
+        "description": "Smiling Cat Face with Open Mouth"
+      },
+      {
+        "emojiCode": "&#128571;",
+        "description": "Smiling Cat Face with Heart-Eyes"
+      },
+      {
+        "emojiCode": "&#128572;",
+        "description": "Cat Face with Wry Smile"
+      },
+      {
+        "emojiCode": "&#128573;",
+        "description": "Kissing Cat Face"
+      },
+      {
+        "emojiCode": "&#128574;",
+        "description": "Pouting Cat Face"
+      }];
+
+
+    var emojiListDiv = document.getElementById('emojiList');
+
+    emojis.forEach(function (emoji) {
+      var emojiElement = document.createElement('div');
+      emojiElement.innerHTML = '<span class="emoji">' + emoji.emojiCode + '</span> - ' + emoji.description;
+      emojiListDiv.appendChild(emojiElement);
+    });
+  </script>
+</body>
+
+</html>
